@@ -1,0 +1,1 @@
+<script async data-cfasync="false" src="{$klaroScriptPath}"></script>
