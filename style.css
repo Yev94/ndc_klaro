@@ -868,22 +868,21 @@
     height: 200px;
     padding-right: 8px;
   }
-}
-
-div.klaro div.cookie-modal div.cookie-notice.cookie-modal-notice {
-  transform: translateY(0px);
-  bottom: 0;
-  top: auto;
-  position: fixed;
-  max-width: 100%;
-  padding: 10px;
-}
-div.klaro .cookie-modal .cm-modal.cm-klaro {
-  transform: translateY(0px);
-  bottom: 0;
-  top: auto;
-  position: fixed;
-  max-width: 100%;
+  div.klaro div.cookie-modal div.cookie-notice.cookie-modal-notice {
+    transform: translateY(0px);
+    bottom: 0;
+    top: auto;
+    position: fixed;
+    max-width: 100%;
+    padding: 10px;
+  }
+  div.klaro .cookie-modal .cm-modal.cm-klaro {
+    transform: translateY(0px);
+    bottom: 0;
+    top: auto;
+    position: fixed;
+    max-width: 100%;
+  }
 }
 
 .klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-ok {
