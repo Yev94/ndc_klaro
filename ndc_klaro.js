@@ -36,7 +36,7 @@ var klaroConfig = {
   hideDeclineAll: false,
   hideLearnMore: false,
   noticeAsModal: true,
-  disablePoweredBy: true,
+  disablePoweredBy: false,
   translations: {
     es: {
       privacyPolicyUrl: urlPoliticas.cookies.es,
