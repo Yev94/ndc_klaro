@@ -261,6 +261,9 @@
   color: var(--green1, var(--corporative-color));
   text-decoration: none;
 }
+.klaro .cookie-notice a {
+  text-decoration: underline;
+}
 .klaro .context-notice h1,
 .klaro .context-notice h2,
 .klaro .context-notice li,
@@ -376,7 +379,7 @@
   background-color: transparent;
   color: var(--corporative-color);
   border: none;
-  text-decoration: none;
+  text-decoration: underline;
 }
 .klaro .context-notice {
   border-radius: 4px;
@@ -929,4 +932,8 @@
   li.cm-service
   span.cm-required {
   color: #000;
+}
+
+.klaro .cookie-modal a{
+  text-decoration: underline;
 }
