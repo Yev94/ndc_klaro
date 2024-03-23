@@ -36,7 +36,7 @@ var klaroConfig = {
   hideDeclineAll: false,
   hideLearnMore: false,
   noticeAsModal: true,
-  disablePoweredBy: true,
+  disablePoweredBy: false,
   translations: {
     es: {
       privacyPolicyUrl: urlPoliticas.cookies.es,
@@ -2714,7 +2714,8 @@ function checkBodyAndInsertElement() {
           },
           decline: "Descartar tudo",
           ok: "Aceitar tudo",
-          poweredBy: "Realizado com Klaro!",
+          implementedBy: "Implementado pela NDC",
+          poweredBy: " com Klaro",
           privacyPolicy: {
             name: "Política de Cookies",
             text: "Para saber mais, por favor, leia nossa {privacyPolicy}."
@@ -2801,7 +2802,8 @@ function checkBodyAndInsertElement() {
           },
           decline: "Rebutja",
           ok: "Accepta",
-          poweredBy: "Funciona amb Klaro!",
+          implementedBy: "Implementado por NDC",
+          poweredBy: " amb Klaro",
           purposeItem: {
             service: "aplicaci\xf3",
             services: "aplicacions"
@@ -2868,7 +2870,8 @@ function checkBodyAndInsertElement() {
             purposes: "Zpracov\xe1n\xed  pro \xfačely <tr-snip></tr-snip>",
             purpose: "Zpracov\xe1n\xed pro \xfačely <tr-snip></tr-snip>"
           },
-          poweredBy: "Realizov\xe1no pomoc\xed Klaro!",
+          implementedBy: "Provádí NDC",
+          poweredBy: " pomoc\xed Klaro",
           contextualConsent: {
             description: "Chcete nač\xedst extern\xed obsah dod\xe1van\xfd prostřednictv\xedm {title}?",
             acceptOnce: "Ano",
@@ -2917,7 +2920,8 @@ function checkBodyAndInsertElement() {
           },
           decline: "Afvis",
           ok: "Ok",
-          poweredBy: "Realiseret med Klaro!",
+          implementedBy: "Implementeret af NDC",
+          poweredBy: " med Klaro",
           purposeItem: {
             service: "",
             services: ""
@@ -2956,7 +2960,8 @@ function checkBodyAndInsertElement() {
           },
           decline: "Ich lehne ab",
           ok: "Das ist ok",
-          poweredBy: "Realisiert mit Klaro!",
+          implementedBy: "Uitgevoerd door NDC",
+          poweredBy: " mit Klaro",
           privacyPolicy: {
             name: "Datenschutzerkl\xe4rung",
             text: "Um mehr zu erfahren, lesen Sie bitte unsere {privacyPolicy}."
@@ -3046,7 +3051,8 @@ function checkBodyAndInsertElement() {
           },
           decline: "Απόρριπτω",
           ok: "OK",
-          poweredBy: "Υποστηρίζεται από το Klaro!",
+          implementedBy: "Εφαρμόζεται από την NDC",
+          poweredBy: " από το Klaro",
           purposeItem: {
             service: "",
             services: ""
@@ -3085,7 +3091,8 @@ function checkBodyAndInsertElement() {
           },
           decline: "Deny",
           ok: "That's ok",
-          poweredBy: "Realized with Klaro!",
+          implementedBy: "Implemented by NDC",
+          poweredBy: " with Klaro",
           privacyPolicy: {
             name: "Cookies Policy",
             text: "To learn more, please read our {privacyPolicy}."
@@ -3162,7 +3169,8 @@ function checkBodyAndInsertElement() {
           },
           decline: "Rechazar todas",
           ok: "Aceptar todas",
-          poweredBy: "\xa1Realizado con Klaro!",
+          implementedBy: "Implemented por NDC",
+          poweredBy: " con Klaro",
           privacyPolicy: {
             name: "Pol\xedtica de Cookies",
             text: "Para m\xe1s informaci\xf3n, consulte nuestra {privacyPolicy}."
@@ -3252,7 +3260,8 @@ function checkBodyAndInsertElement() {
           },
           decline: "Hylk\xe4\xe4",
           ok: "Hyv\xe4ksy",
-          poweredBy: "Palvelun tarjoaa Klaro!",
+          implementedBy: "Toteuttaja NDC",
+          poweredBy: " tarjoaa Klaro",
           purposeItem: {
             service: "",
             services: ""
@@ -3291,7 +3300,8 @@ function checkBodyAndInsertElement() {
           },
           decline: "Je refuse",
           ok: "C'est bon.",
-          poweredBy: "R\xe9alis\xe9 avec Klaro !",
+          implementedBy: "Mise en œuvre par le NDC",
+          poweredBy: " avec Klaro",
           privacyPolicy: {
             name: "politique de confidentialit\xe9",
             text: "Pour en savoir plus, veuillez lire notre {privacyPolicy}."
@@ -3363,7 +3373,8 @@ function checkBodyAndInsertElement() {
           },
           decline: "Descartar todas",
           ok: "De acordo",
-          poweredBy: "\xa1Realizado con Klaro!",
+          implementedBy: "Implementado por NDC",
+          poweredBy: " con Klaro",
           privacyPolicy: {
             name: "pol\xedtica de privacidade",
             text: "Para saber m\xe1is, por favor lea a nosa {privacyPolicy}."
@@ -3453,7 +3464,8 @@ function checkBodyAndInsertElement() {
           },
           decline: "Ment\xe9s",
           ok: "Elfogad",
-          poweredBy: "Powered by Klaro!",
+          implementedBy: "Implemented by NDC",
+          poweredBy: " with Klaro",
           purposeItem: {
             service: "",
             services: ""
@@ -3505,7 +3517,8 @@ function checkBodyAndInsertElement() {
           },
           decline: "Odbij",
           ok: "U redu",
-          poweredBy: "Pokreće Klaro!",
+          implementedBy: "Implemented by NDC",
+          poweredBy: " with Klaro",
           purposeItem: {
             service: "",
             services: ""
@@ -3544,7 +3557,8 @@ function checkBodyAndInsertElement() {
           },
           decline: "Rifiutare tutti",
           ok: "Accettare tutti",
-          poweredBy: "Realizzato con Klaro!",
+          implementedBy: "Attuato da NDC",
+          poweredBy: " con Klaro",
           privacyPolicy: {
             name: "Informativa sui cookie",
             text: "Per saperne di pi\xf9, legga la nostra {privacyPolicy}."
@@ -3621,7 +3635,8 @@ function checkBodyAndInsertElement() {
           },
           decline: "Ik weiger",
           ok: "Dat is ok\xe9",
-          poweredBy: "Gerealiseerd met Klaro!",
+          implementedBy: "Geïmplementeerd door NDC",
+          poweredBy: " met Klaro",
           privacyPolicy: {
             name: "privacybeleid",
             text: "Voor meer informatie kunt u ons {privacyPolicy} lezen."
@@ -3710,7 +3725,8 @@ function checkBodyAndInsertElement() {
           },
           decline: "Avsl\xe5",
           ok: "OK",
-          poweredBy: "Laget med Klaro!",
+          implementedBy: "Implementert av NDC",
+          poweredBy: " med Klaro",
           purposeItem: {
             service: "",
             services: ""
@@ -3763,7 +3779,8 @@ function checkBodyAndInsertElement() {
           },
           decline: "Renunță",
           ok: "OK",
-          poweredBy: "Realizat de Klaro!",
+          implementedBy: "Implementat de NDC",
+          poweredBy: " de Klaro",
           purposeItem: {
             service: "",
             services: ""
@@ -3815,7 +3832,8 @@ function checkBodyAndInsertElement() {
           },
           decline: "Odbij",
           ok: "U redu",
-          poweredBy: "Pokreće Klaro!",
+          implementedBy: "Implementiran od strane NDC",
+          poweredBy: " sa Klaro",
           purposeItem: {
             service: "",
             services: ""
@@ -3905,7 +3923,8 @@ function checkBodyAndInsertElement() {
           },
           decline: "Avb\xf6j",
           ok: "OK",
-          poweredBy: "K\xf6rs p\xe5 Klaro!",
+          implementedBy: "Genomfört av NDC",
+          poweredBy: " p\xe5 Klaro",
           purposeItem: {
             service: "",
             services: ""
@@ -3996,7 +4015,8 @@ function checkBodyAndInsertElement() {
           },
           decline: "Odmawiam",
           ok: "To jest ok.",
-          poweredBy: "Zrealizowane z Klaro!",
+          implementedBy: "Wdrożone przez NDC",
+          poweredBy: " z Klaro",
           privacyPolicy: {
             name: "polityka prywatności",
             text: "Aby dowiedzieć się więcej, prosimy o zapoznanie się z naszą {privacyPolicy}."
@@ -6492,7 +6512,11 @@ function checkBodyAndInsertElement() {
                 className: "cm-powered-by"
               }, es("a", {
                 target: "_blank",
-                href: l.poweredBy || "https://niveldecalidad.com",
+                href: l.implementedBy || "https://niveldecalidad.com",
+                rel: "noopener"
+              }, d(["implementedBy"])), es("a", {
+                target: "_blank",
+                href: l.poweredBy || "https://klaro.org/",
                 rel: "noopener"
               }, d(["poweredBy"])))));
               return f ? es("div", {
