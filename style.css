@@ -5,6 +5,9 @@
 .klaro .cookie-notice .slider {
   box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 5px 5px 10px 0 rgba(0, 0, 0, 0.19);
 }
+
+
+
 .klaro,
 .klaro button {
   font-family: inherit;
@@ -259,7 +262,6 @@
 .klaro .cookie-notice a {
   color: var(--corporative-color);
   color: var(--green1, var(--corporative-color));
-  text-decoration: none;
 }
 .klaro .context-notice h1,
 .klaro .context-notice h2,
@@ -376,7 +378,6 @@
   background-color: transparent;
   color: var(--corporative-color);
   border: none;
-  text-decoration: none;
 }
 .klaro .context-notice {
   border-radius: 4px;
@@ -517,6 +518,7 @@
 .klaro .cookie-modal .cm-modal .cm-footer .cm-powered-by a {
   color: #5c5c5c;
   color: var(--dark2, #5c5c5c);
+  text-decoration: none;
 }
 .klaro .cookie-modal .cm-modal .cm-header {
   border-bottom-width: var(--border-width, 1px);
