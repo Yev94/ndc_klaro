@@ -1,23 +1,21 @@
-var urlPoliticas = {
-  cookies: {
-    es: "/faqs/bases-legales/politica-de-cookies.htm",
-    en: "/faqs/bases-legales/politica-de-cookies.htm",
-    pt: "/faqs/bases-legales/politica-de-cookies.htm",
-    it: "/faqs/bases-legales/politica-de-cookies.htm"
-  },
-  privacidad: {
-    es: "https://www.megacalzado.com/faqs/bases-legales/politica-de-privacidad.htm",
-    en: "https://www.megacalzado.com/faqs/bases-legales/politica-de-privacidad.htm",
-    pt: "https://www.megacalzado.com/faqs/bases-legales/politica-de-privacidad.htm",
-    it: "https://www.megacalzado.com/faqs/bases-legales/politica-de-privacidad.htm"
-  }
-},
-
-  corp_color = "#000000";
-
-cssColor = ":root {--corporative-color:" + corp_color + "} ::-webkit-scrollbar-thumb{background:" + corp_color + "cf}";
-
 var klaroConfig = {
+  dominio: window.location.hostname,
+  urlPoliticas: {
+    cookies: {
+      es: "/faqs/bases-legales/politica-de-cookies.htm",
+      en: "/faqs/bases-legales/politica-de-cookies.htm",
+      pt: "/faqs/bases-legales/politica-de-cookies.htm",
+      it: "/faqs/bases-legales/politica-de-cookies.htm"
+    },
+    privacidad: {
+      es: "/faqs/bases-legales/politica-de-privacidad.htm",
+      en: "/faqs/bases-legales/politica-de-privacidad.htm",
+      pt: "/faqs/bases-legales/politica-de-privacidad.htm",
+      it: "/faqs/bases-legales/politica-de-privacidad.htm"
+    }
+  },
+  corp_color: "#000000",
+  cssColor: "",
   version: 1,
   elementID: 'ndc_klaro',
   styling: {
@@ -37,44 +35,7 @@ var klaroConfig = {
   hideLearnMore: false,
   noticeAsModal: true,
   disablePoweredBy: true,
-  translations: {
-    es: {
-      privacyPolicyUrl: urlPoliticas.cookies.es,
-      purposes: {
-        analytics: {
-          title: "Analítica",
-          description: "Nos permiten contar las visitas y fuentes de circulación para mejorar el desempeño de nuestro sitio. Nos ayudan a saber qué páginas son las más o menos populares, y ver cuántas personas visitan el sitio. Toda la información que recogen estas cookies es anónima.",
-        },
-      },
-    },
-    en: {
-      privacyPolicyUrl: urlPoliticas.cookies.en,
-      purposes: {
-        analytics: {
-          title: "Analytics",
-          description: "They allow us to count visits and traffic sources to improve the performance of our site. They help us to know which pages are the most or least popular, and to see how many people visit the site. All information these cookies collect is anonymous.",
-        },
-      },
-    },
-    pt: {
-      privacyPolicyUrl: urlPoliticas.cookies.pt,
-      purposes: {
-        analytics: {
-          title: "Analítica",
-          description: "Permitem-nos contar as visitas e as fontes de tráfego para melhorar o desempenho do nosso sítio. Ajudam-nos a saber quais são as páginas mais ou menos populares e a ver quantas pessoas visitam o sítio. Todas as informações recolhidas por estes cookies são anónimas.",
-        },
-      },
-    },
-    it: {
-      privacyPolicyUrl: urlPoliticas.cookies.it,
-      purposes: {
-        analytics: {
-          title: "Analisi",
-          description: "Ci permettono di contare le visite e le fonti di traffico per migliorare le prestazioni del nostro sito. Ci aiutano a sapere quali sono le pagine più o meno popolari e a vedere quante persone visitano il sito. Tutte le informazioni raccolte da questi cookie sono anonime.",
-        },
-      },
-    },
-  },
+  translations: {},
   services: [
     {
       name: 'GoogleAnalytics',
@@ -128,6 +89,57 @@ var klaroConfig = {
     },
   ],
 };
+
+klaroConfig.cssColor = ":root {--corporative-color:" + klaroConfig.corp_color + "} ::-webkit-scrollbar-thumb{background:" + klaroConfig.corp_color + "cf}";
+
+klaroConfig.translations = {
+  es: {
+    privacyPolicyUrl: klaroConfig.urlPoliticas.cookies.es,
+    purposes: {
+      analytics: {
+        title: "Analítica",
+        description: "Nos permiten contar las visitas y fuentes de circulación para mejorar el desempeño de nuestro sitio. Nos ayudan a saber qué páginas son las más o menos populares, y ver cuántas personas visitan el sitio. Toda la información que recogen estas cookies es anónima.",
+      },
+    },
+  },
+  en: {
+    privacyPolicyUrl: klaroConfig.urlPoliticas.cookies.en,
+    purposes: {
+      analytics: {
+        title: "Analytics",
+        description: "They allow us to count visits and traffic sources to improve the performance of our site. They help us to know which pages are the most or least popular, and to see how many people visit the site. All information these cookies collect is anonymous.",
+      },
+    },
+  },
+  pt: {
+    privacyPolicyUrl: klaroConfig.urlPoliticas.cookies.pt,
+    purposes: {
+      analytics: {
+        title: "Analítica",
+        description: "Permitem-nos contar as visitas e as fontes de tráfego para melhorar o desempenho do nosso sítio. Ajudam-nos a saber quais são as páginas mais ou menos populares e a ver quantas pessoas visitam o sítio. Todas as informações recolhidas por estes cookies são anónimas.",
+      },
+    },
+  },
+  it: {
+    privacyPolicyUrl: klaroConfig.urlPoliticas.cookies.it,
+    purposes: {
+      analytics: {
+        title: "Analisi",
+        description: "Ci permettono di contare le visite e le fonti di traffico per migliorare le prestazioni del nostro sito. Ci aiutano a sapere quali sono le pagine più o meno popolari e a vedere quante persone visitano il sito. Tutte le informazioni raccolte da questi cookie sono anonime.",
+      },
+    },
+  },
+};
+
+// Función para añadir el dominio a cada URL.
+// function agregarDominioAUrls(objeto) {
+//     Object.keys(objeto).forEach(idioma => {
+//       objeto[idioma] = `https://${klaroConfig.dominio}${objeto[idioma]}`;
+//   });
+// }
+
+// Llamas a la función para modificar el objeto 'urlPoliticas'.
+// agregarDominioAUrls(klaroConfig.urlPoliticas.privacidad);
 
 function checkBodyAndInsertElement() {
   if (document.body) {  // Verifica si el body está disponible
@@ -2697,7 +2709,7 @@ function checkBodyAndInsertElement() {
           },
           consentNotice: {
             changeDescription: "Houve mudan\xe7as desde sua \xfaltima visita, queira renovar seu consentimento.",
-            description: "<h1>Cookies de Consentimento</h1><span class='cookie-description'>Utilizamos cookies para fins analíticos e para apresentar publicidade adaptada às suas preferências. Partilhamos informações sobre a sua utilização do nosso sítio com os nossos parceiros de redes sociais, publicidade e análise, que podem combiná-las com outras informações que lhes tenha fornecido ou que tenham recolhido a partir da sua utilização dos respectivos serviços. Pode definir ou rejeitar cookies clicando em “Preferências”. Também pode aceitar ou rejeitar todos os cookies clicando no botão “Aceitar todos” ou “Descartar todos”. Para mais informações, consulte a nossa {privacyPolicy} y nuestra <a href='" + urlPoliticas.privacidad.pt + "' target='_blank'>Política de privacidade</a>.<span>",
+            description: "<h1>Cookies de Consentimento</h1><span class='cookie-description'>Utilizamos cookies para fins analíticos e para apresentar publicidade adaptada às suas preferências. Partilhamos informações sobre a sua utilização do nosso sítio com os nossos parceiros de redes sociais, publicidade e análise, que podem combiná-las com outras informações que lhes tenha fornecido ou que tenham recolhido a partir da sua utilização dos respectivos serviços. Pode definir ou rejeitar cookies clicando em “Preferências”. Também pode aceitar ou rejeitar todos os cookies clicando no botão “Aceitar todos” ou “Descartar todos”. Para mais informações, consulte a nossa {privacyPolicy} y nuestra <a href='" + klaroConfig.urlPoliticas.privacidad.pt + "' target='_blank'>Política de privacidade</a>.<span>",
             imprint: {
               name: "Imprimir"
             },
@@ -2714,7 +2726,8 @@ function checkBodyAndInsertElement() {
           },
           decline: "Descartar tudo",
           ok: "Aceitar tudo",
-          poweredBy: "Realizado com Klaro!",
+          implementedBy: "Implementado pela NDC",
+          poweredBy: " com Klaro",
           privacyPolicy: {
             name: "Política de Cookies",
             text: "Para saber mais, por favor, leia nossa {privacyPolicy}."
@@ -2801,7 +2814,8 @@ function checkBodyAndInsertElement() {
           },
           decline: "Rebutja",
           ok: "Accepta",
-          poweredBy: "Funciona amb Klaro!",
+          implementedBy: "Implementado por NDC",
+          poweredBy: " amb Klaro",
           purposeItem: {
             service: "aplicaci\xf3",
             services: "aplicacions"
@@ -2868,7 +2882,8 @@ function checkBodyAndInsertElement() {
             purposes: "Zpracov\xe1n\xed  pro \xfačely <tr-snip></tr-snip>",
             purpose: "Zpracov\xe1n\xed pro \xfačely <tr-snip></tr-snip>"
           },
-          poweredBy: "Realizov\xe1no pomoc\xed Klaro!",
+          implementedBy: "Provádí NDC",
+          poweredBy: " pomoc\xed Klaro",
           contextualConsent: {
             description: "Chcete nač\xedst extern\xed obsah dod\xe1van\xfd prostřednictv\xedm {title}?",
             acceptOnce: "Ano",
@@ -2917,7 +2932,8 @@ function checkBodyAndInsertElement() {
           },
           decline: "Afvis",
           ok: "Ok",
-          poweredBy: "Realiseret med Klaro!",
+          implementedBy: "Implementeret af NDC",
+          poweredBy: " med Klaro",
           purposeItem: {
             service: "",
             services: ""
@@ -2956,7 +2972,8 @@ function checkBodyAndInsertElement() {
           },
           decline: "Ich lehne ab",
           ok: "Das ist ok",
-          poweredBy: "Realisiert mit Klaro!",
+          implementedBy: "Uitgevoerd door NDC",
+          poweredBy: " mit Klaro",
           privacyPolicy: {
             name: "Datenschutzerkl\xe4rung",
             text: "Um mehr zu erfahren, lesen Sie bitte unsere {privacyPolicy}."
@@ -3046,7 +3063,8 @@ function checkBodyAndInsertElement() {
           },
           decline: "Απόρριπτω",
           ok: "OK",
-          poweredBy: "Υποστηρίζεται από το Klaro!",
+          implementedBy: "Εφαρμόζεται από την NDC",
+          poweredBy: " από το Klaro",
           purposeItem: {
             service: "",
             services: ""
@@ -3068,7 +3086,7 @@ function checkBodyAndInsertElement() {
           },
           consentNotice: {
             changeDescription: "There were changes since your last visit, please renew your consent.",
-            description: "<h1>Consent Cookies</h1><span class='cookie-description'>We use cookies for analytical purposes and to display advertising personalized to your preferences. We share information about your use of our site with our social media, advertising and analytics partners, who may combine it with other information you have provided to them or that they have collected from your use of their services. You can set or reject cookies by clicking on “Preferences”. You can also accept or reject all by clicking the “Accept all” or “Deny” button. For more information, please see our {privacyPolicy} and our <a href='" + urlPoliticas.privacidad.en + "' target='_blank'>Privacy Policy</a>.<span>",
+            description: "<h1>Consent Cookies</h1><span class='cookie-description'>We use cookies for analytical purposes and to display advertising personalized to your preferences. We share information about your use of our site with our social media, advertising and analytics partners, who may combine it with other information you have provided to them or that they have collected from your use of their services. You can set or reject cookies by clicking on “Preferences”. You can also accept or reject all by clicking the “Accept all” or “Deny” button. For more information, please see our {privacyPolicy} and our <a href='" + klaroConfig.urlPoliticas.privacidad.en + "' target='_blank'>Privacy Policy</a>.<span>",
             imprint: {
               name: "Print"
             },
@@ -3085,7 +3103,8 @@ function checkBodyAndInsertElement() {
           },
           decline: "Deny",
           ok: "That's ok",
-          poweredBy: "Realized with Klaro!",
+          implementedBy: "Implemented by NDC",
+          poweredBy: " with Klaro",
           privacyPolicy: {
             name: "Cookies Policy",
             text: "To learn more, please read our {privacyPolicy}."
@@ -3145,7 +3164,7 @@ function checkBodyAndInsertElement() {
           },
           consentNotice: {
             changeDescription: "Ha habido cambios en las cookies desde su \xfaltima visita. Debe renovar su consentimiento.",
-            description: "<h1>Consentimiento de Cookies</h1><span class='cookie-description'>Utilizamos cookies con finalidades anal\xedticas y para mostrar publicidad personalizada con sus preferencias. Compartimos información sobre el uso que hace de nuestro sitio con nuestros socios de redes sociales, publicidad y análisis, que pueden combinarla con otra información que usted les haya proporcionado o que hayan recopilado a partir del uso que usted hace de sus servicios. Puede configurar o rechazar las cookies haciendo click en “Preferencias”. Tambi\xe9n puede aceptar o rechazar todas pulsando el bot\xf3n “Aceptar todas” o “Rechazar todas”. Para m\xe1s informaci\xf3n, consulte nuestra {privacyPolicy} y nuestra <a href=" + urlPoliticas.privacidad.es + " target='_blank'>Política de Privacidad</a>.<span>",
+            description: "<h1>Consentimiento de Cookies</h1><span class='cookie-description'>Utilizamos cookies con finalidades anal\xedticas y para mostrar publicidad personalizada con sus preferencias. Compartimos información sobre el uso que hace de nuestro sitio con nuestros socios de redes sociales, publicidad y análisis, que pueden combinarla con otra información que usted les haya proporcionado o que hayan recopilado a partir del uso que usted hace de sus servicios. Puede configurar o rechazar las cookies haciendo click en “Preferencias”. Tambi\xe9n puede aceptar o rechazar todas pulsando el bot\xf3n “Aceptar todas” o “Rechazar todas”. Para m\xe1s informaci\xf3n, consulte nuestra {privacyPolicy} y nuestra <a href=" + klaroConfig.urlPoliticas.privacidad.es + " target='_blank'>Política de Privacidad</a>.<span>",
             imprint: {
               name: "Imprimir"
             },
@@ -3162,7 +3181,8 @@ function checkBodyAndInsertElement() {
           },
           decline: "Rechazar todas",
           ok: "Aceptar todas",
-          poweredBy: "\xa1Realizado con Klaro!",
+          implementedBy: "Implemented por NDC",
+          poweredBy: " con Klaro",
           privacyPolicy: {
             name: "Pol\xedtica de Cookies",
             text: "Para m\xe1s informaci\xf3n, consulte nuestra {privacyPolicy}."
@@ -3252,7 +3272,8 @@ function checkBodyAndInsertElement() {
           },
           decline: "Hylk\xe4\xe4",
           ok: "Hyv\xe4ksy",
-          poweredBy: "Palvelun tarjoaa Klaro!",
+          implementedBy: "Toteuttaja NDC",
+          poweredBy: " tarjoaa Klaro",
           purposeItem: {
             service: "",
             services: ""
@@ -3291,7 +3312,8 @@ function checkBodyAndInsertElement() {
           },
           decline: "Je refuse",
           ok: "C'est bon.",
-          poweredBy: "R\xe9alis\xe9 avec Klaro !",
+          implementedBy: "Mise en œuvre par le NDC",
+          poweredBy: " avec Klaro",
           privacyPolicy: {
             name: "politique de confidentialit\xe9",
             text: "Pour en savoir plus, veuillez lire notre {privacyPolicy}."
@@ -3363,7 +3385,8 @@ function checkBodyAndInsertElement() {
           },
           decline: "Descartar todas",
           ok: "De acordo",
-          poweredBy: "\xa1Realizado con Klaro!",
+          implementedBy: "Implementado por NDC",
+          poweredBy: " con Klaro",
           privacyPolicy: {
             name: "pol\xedtica de privacidade",
             text: "Para saber m\xe1is, por favor lea a nosa {privacyPolicy}."
@@ -3453,7 +3476,8 @@ function checkBodyAndInsertElement() {
           },
           decline: "Ment\xe9s",
           ok: "Elfogad",
-          poweredBy: "Powered by Klaro!",
+          implementedBy: "Implemented by NDC",
+          poweredBy: " with Klaro",
           purposeItem: {
             service: "",
             services: ""
@@ -3505,7 +3529,8 @@ function checkBodyAndInsertElement() {
           },
           decline: "Odbij",
           ok: "U redu",
-          poweredBy: "Pokreće Klaro!",
+          implementedBy: "Implemented by NDC",
+          poweredBy: " with Klaro",
           purposeItem: {
             service: "",
             services: ""
@@ -3527,7 +3552,7 @@ function checkBodyAndInsertElement() {
           },
           consentNotice: {
             changeDescription: "Dall'ultima visita sono state apportate modifiche ai cookie. È necessario rinnovare il consenso.",
-            description: "<h1>Consenso ai Cookies</h1><span class='cookie-description'>Utilizziamo i cookie per scopi analitici e per visualizzare pubblicità personalizzata in base alle vostre preferenze. Condividiamo le informazioni sull'utilizzo del nostro sito con i nostri partner di social media, pubblicità e analisi, che possono combinarle con altre informazioni che avete fornito loro o che hanno raccolto dall'utilizzo dei loro servizi. È possibile configurare o rifiutare i cookie facendo clic su  Preferenze. È inoltre possibile accettare o rifiutare tutto premendo il pulsante “Accetta tutto” o “Rifiuta tutto”. Per ulteriori informazioni, consultare la nostra {privacyPolicy} e la nostra <a href=" + urlPoliticas.privacidad.it + " target='_blank'>Privacy Policy</a>.<span>",
+            description: "<h1>Consenso ai Cookies</h1><span class='cookie-description'>Utilizziamo i cookie per scopi analitici e per visualizzare pubblicità personalizzata in base alle vostre preferenze. Condividiamo le informazioni sull'utilizzo del nostro sito con i nostri partner di social media, pubblicità e analisi, che possono combinarle con altre informazioni che avete fornito loro o che hanno raccolto dall'utilizzo dei loro servizi. È possibile configurare o rifiutare i cookie facendo clic su  Preferenze. È inoltre possibile accettare o rifiutare tutto premendo il pulsante “Accetta tutto” o “Rifiuta tutto”. Per ulteriori informazioni, consultare la nostra {privacyPolicy} e la nostra <a href=" + klaroConfig.urlPoliticas.privacidad.it + " target='_blank'>Privacy Policy</a>.<span>",
             imprint: {
               name: "Impronta"
             },
@@ -3544,7 +3569,8 @@ function checkBodyAndInsertElement() {
           },
           decline: "Rifiutare tutti",
           ok: "Accettare tutti",
-          poweredBy: "Realizzato con Klaro!",
+          implementedBy: "Attuato da NDC",
+          poweredBy: " con Klaro",
           privacyPolicy: {
             name: "Informativa sui cookie",
             text: "Per saperne di pi\xf9, legga la nostra {privacyPolicy}."
@@ -3621,7 +3647,8 @@ function checkBodyAndInsertElement() {
           },
           decline: "Ik weiger",
           ok: "Dat is ok\xe9",
-          poweredBy: "Gerealiseerd met Klaro!",
+          implementedBy: "Geïmplementeerd door NDC",
+          poweredBy: " met Klaro",
           privacyPolicy: {
             name: "privacybeleid",
             text: "Voor meer informatie kunt u ons {privacyPolicy} lezen."
@@ -3710,7 +3737,8 @@ function checkBodyAndInsertElement() {
           },
           decline: "Avsl\xe5",
           ok: "OK",
-          poweredBy: "Laget med Klaro!",
+          implementedBy: "Implementert av NDC",
+          poweredBy: " med Klaro",
           purposeItem: {
             service: "",
             services: ""
@@ -3763,7 +3791,8 @@ function checkBodyAndInsertElement() {
           },
           decline: "Renunță",
           ok: "OK",
-          poweredBy: "Realizat de Klaro!",
+          implementedBy: "Implementat de NDC",
+          poweredBy: " de Klaro",
           purposeItem: {
             service: "",
             services: ""
@@ -3815,7 +3844,8 @@ function checkBodyAndInsertElement() {
           },
           decline: "Odbij",
           ok: "U redu",
-          poweredBy: "Pokreće Klaro!",
+          implementedBy: "Implementiran od strane NDC",
+          poweredBy: " sa Klaro",
           purposeItem: {
             service: "",
             services: ""
@@ -3905,7 +3935,8 @@ function checkBodyAndInsertElement() {
           },
           decline: "Avb\xf6j",
           ok: "OK",
-          poweredBy: "K\xf6rs p\xe5 Klaro!",
+          implementedBy: "Genomfört av NDC",
+          poweredBy: " p\xe5 Klaro",
           purposeItem: {
             service: "",
             services: ""
@@ -3996,7 +4027,8 @@ function checkBodyAndInsertElement() {
           },
           decline: "Odmawiam",
           ok: "To jest ok.",
-          poweredBy: "Zrealizowane z Klaro!",
+          implementedBy: "Wdrożone przez NDC",
+          poweredBy: " z Klaro",
           privacyPolicy: {
             name: "polityka prywatności",
             text: "Aby dowiedzieć się więcej, prosimy o zapoznanie się z naszą {privacyPolicy}."
@@ -4885,7 +4917,7 @@ function checkBodyAndInsertElement() {
           }
         }
       }, function (e, t, n) {
-        (t = n(188)(!1)).push([e.i, cssColor + '.klaro .context-notice .slider,.klaro .cookie-modal .cm-modal.cm-klaro,.klaro .cookie-modal .slider,.klaro .cookie-modal-notice,.klaro .cookie-notice .slider{box-shadow:0 4px 6px 0 rgba(0,0,0,.2),5px 5px 10px 0 rgba(0,0,0,.19)}.klaro,.klaro button{font-family:inherit;font-family:var(--font-family,inherit);font-size:14px;font-size:var(--font-size,14px)}.klaro ::-webkit-scrollbar{width:4px;height:10px}.klaro ::-webkit-scrollbar-thumb:hover{background:var(--corporative-color)}.klaro ::-webkit-scrollbar-thumb{transition:2s;border-radius:10px}.klaro.cm-as-context-notice{height:100%;padding-bottom:12px;padding-top:12px}.klaro .context-notice .cm-switch-container,.klaro .cookie-modal .cm-switch-container,.klaro .cookie-notice .cm-switch-container{border-bottom-style:var(--border-style,solid);border-bottom-width:var(--border-width,1px);border-bottom:1px solid #c8c8c8;border-bottom-color:var(--light2,#c8c8c8);display:block;position:relative;padding:10px 10px 10px 66px;line-height:20px;vertical-align:middle;min-height:40px}.klaro .context-notice .cm-switch-container:last-child,.klaro .cookie-modal .cm-switch-container:last-child,.klaro .cookie-notice .cm-switch-container:last-child{border-bottom:0}.klaro .context-notice .cm-switch-container p,.klaro .context-notice .cm-switch-container:first-child,.klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-purpose p,.klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-purpose:first-child,.klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-service p,.klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-service:first-child,.klaro .cookie-modal .cm-modal .cm-body ul.cm-services li.cm-purpose p,.klaro .cookie-modal .cm-modal .cm-body ul.cm-services li.cm-purpose:first-child,.klaro .cookie-modal .cm-modal .cm-body ul.cm-services li.cm-service p,.klaro .cookie-modal .cm-modal .cm-body ul.cm-services li.cm-service:first-child,.klaro .cookie-modal .cm-switch-container p,.klaro .cookie-modal .cm-switch-container:first-child,.klaro .cookie-notice .cm-switch-container p,.klaro .cookie-notice .cm-switch-container:first-child{margin-top:0}.klaro .context-notice .cm-switch,.klaro .cookie-modal .cm-switch,.klaro .cookie-notice .cm-switch{position:relative;display:inline-block;width:50px;height:30px}.klaro .context-notice .cm-list-input:checked+.cm-list-label .slider,.klaro .cookie-modal .cm-list-input:checked+.cm-list-label .slider,.klaro .cookie-notice .cm-list-input:checked+.cm-list-label .slider{background-color:var(--corporative-color);background-color:var(--green1,var(--corporative-color))}.klaro .context-notice .cm-list-input.half-checked:checked+.cm-list-label .slider,.klaro .cookie-modal .cm-list-input.half-checked:checked+.cm-list-label .slider,.klaro .cookie-notice .cm-list-input.half-checked:checked+.cm-list-label .slider{background-color:var(--corporative-color);background-color:var(--green1,var(--corporative-color));opacity:.6}.klaro .context-notice .cm-list-input.half-checked:checked+.cm-list-label .slider::before,.klaro .context-notice .cm-list-input.only-required+.cm-list-label .slider::before,.klaro .cookie-modal .cm-list-input.half-checked:checked+.cm-list-label .slider::before,.klaro .cookie-modal .cm-list-input.only-required+.cm-list-label .slider::before,.klaro .cookie-notice .cm-list-input.half-checked:checked+.cm-list-label .slider::before,.klaro .cookie-notice .cm-list-input.only-required+.cm-list-label .slider::before{-ms-transform:translateX(10px);transform:translateX(10px)}.klaro .context-notice .cm-list-input.only-required+.cm-list-label .slider,.klaro .cookie-modal .cm-list-input.only-required+.cm-list-label .slider,.klaro .cookie-notice .cm-list-input.only-required+.cm-list-label .slider{background-color:var(--corporative-color);background-color:var(--green2,var(--corporative-color));opacity:.8}.klaro .context-notice .cm-list-input.required:checked+.cm-list-label .slider,.klaro .cookie-modal .cm-list-input.required:checked+.cm-list-label .slider,.klaro .cookie-notice .cm-list-input.required:checked+.cm-list-label .slider{background-color:var(--corporative-color);background-color:var(--green2,var(--corporative-color));opacity:.8;cursor:not-allowed}.klaro .context-notice .cm-list-input,.klaro .cookie-modal .cm-list-input,.klaro .cookie-notice .cm-list-input{position:absolute;top:0;left:0;opacity:0;width:50px;height:30px}.klaro .context-notice .cm-list-title,.klaro .cookie-modal .cm-list-title,.klaro .cookie-notice .cm-list-title{font-size:.9em;font-weight:600}.klaro .context-notice .cm-list-description,.klaro .cookie-modal .cm-list-description,.klaro .cookie-notice .cm-list-description{color:#7c7c7c;color:var(--dark3,#7c7c7c);font-size:.9em;padding-top:4px}.klaro .context-notice .cm-list-label .cm-switch,.klaro .cookie-modal .cm-list-label .cm-switch,.klaro .cookie-notice .cm-list-label .cm-switch{position:absolute;left:0}.klaro .context-notice .cm-list-label .slider,.klaro .cookie-modal .cm-list-label .slider,.klaro .cookie-notice .cm-list-label .slider{background-color:#f2f2f2;background-color:var(--white2,#f2f2f2);position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;transition:.4s;width:50px;display:inline-block}.klaro .context-notice .cm-list-label .slider::before,.klaro .cookie-modal .cm-list-label .slider::before,.klaro .cookie-notice .cm-list-label .slider::before{background-color:#e6e6e6;background-color:var(--white3,#e6e6e6);position:absolute;content:"";height:20px;width:20px;left:5px;bottom:5px;transition:.4s}.klaro .context-notice .cm-list-label .slider.round,.klaro .cookie-modal .cm-list-label .slider.round,.klaro .cookie-notice .cm-list-label .slider.round{border-radius:30px}.klaro .context-notice .cm-list-label .slider.round::before,.klaro .cookie-modal .cm-list-label .slider.round::before,.klaro .cookie-notice .cm-list-label .slider.round::before{border-radius:50%}.klaro .context-notice .cm-list-label input:focus+.slider,.klaro .cookie-modal .cm-list-label input:focus+.slider,.klaro .cookie-notice .cm-list-label input:focus+.slider{box-shadow-color:#48dfb2;box-shadow-color:var(--green3,#48dfb2);box-shadow:0 0 1px var(color,green3)}.klaro .context-notice .cm-list-input:checked+.cm-list-label .slider::before,.klaro .context-notice .cm-list-label input:checked+.slider::before,.klaro .cookie-modal .cm-list-input:checked+.cm-list-label .slider::before,.klaro .cookie-modal .cm-list-label input:checked+.slider::before,.klaro .cookie-notice .cm-list-input:checked+.cm-list-label .slider::before,.klaro .cookie-notice .cm-list-label input:checked+.slider::before{-ms-transform:translateX(20px);transform:translateX(20px)}.klaro .context-notice .cm-list-input:focus+.cm-list-label .slider,.klaro .cookie-modal .cm-list-input:focus+.cm-list-label .slider,.klaro .cookie-notice .cm-list-input:focus+.cm-list-label .slider{box-shadow:0 4px 6px 0 rgba(125,125,125,.2),5px 5px 10px 0 rgba(125,125,125,.19)}.klaro .context-notice a,.klaro .cookie-modal a,.klaro .cookie-notice a{color:var(--corporative-color);color:var(--green1,var(--corporative-color));text-decoration:none}.klaro .cookie-notice a{text-decoration:underline}.klaro .context-notice h1,.klaro .context-notice h2,.klaro .context-notice li,.klaro .context-notice p,.klaro .context-notice strong,.klaro .context-notice ul,.klaro .context-notice.cm-dark p,.klaro .cookie-modal h1,.klaro .cookie-modal h2,.klaro .cookie-modal li,.klaro .cookie-modal p,.klaro .cookie-modal strong,.klaro .cookie-modal ul,.klaro .cookie-notice h1,.klaro .cookie-notice h2,.klaro .cookie-notice li,.klaro .cookie-notice p,.klaro .cookie-notice strong,.klaro .cookie-notice ul{color:#fafafa;color:var(--light1,#fafafa)}.klaro .context-notice h1,.klaro .context-notice h2,.klaro .context-notice li,.klaro .context-notice p,.klaro .context-notice ul,.klaro .cookie-modal h1,.klaro .cookie-modal h2,.klaro .cookie-modal li,.klaro .cookie-modal p,.klaro .cookie-modal ul,.klaro .cookie-notice h1,.klaro .cookie-notice h2,.klaro .cookie-notice li,.klaro .cookie-notice p,.klaro .cookie-notice ul{display:block;text-align:left;margin:.7em 0 0;padding:0}.klaro .context-notice h1,.klaro .context-notice h2,.klaro .context-notice h3,.klaro .context-notice h4,.klaro .context-notice h5,.klaro .context-notice h6,.klaro .cookie-modal h1,.klaro .cookie-modal h2,.klaro .cookie-modal h3,.klaro .cookie-modal h4,.klaro .cookie-modal h5,.klaro .cookie-modal h6,.klaro .cookie-notice h1,.klaro .cookie-notice h2,.klaro .cookie-notice h3,.klaro .cookie-notice h4,.klaro .cookie-notice h5,.klaro .cookie-notice h6{font-family:inherit;font-family:var(--title-font-family,inherit)}.klaro .context-notice .cm-link,.klaro .cookie-modal .cm-link,.klaro .cookie-notice .cm-link{margin-right:.5em;vertical-align:middle}.klaro .context-notice .cm-btn,.klaro .cookie-modal .cm-btn,.klaro .cookie-notice .cm-btn{color:#fff;color:var(--button-text-color,#fff);background-color:#5c5c5c;background-color:var(--dark2,#5c5c5c);border-radius:4px;border-radius:var(--border-radius,4px);padding:12px;margin-right:.5em;border-style:none;font-size:1em;cursor:pointer}.klaro .context-notice .cm-btn:disabled,.klaro .cookie-modal .cm-btn:disabled,.klaro .cookie-notice .cm-btn:disabled{opacity:.5}.klaro .context-notice .cm-btn.cm-btn-close,.klaro .cookie-modal .cm-btn.cm-btn-close,.klaro .cookie-notice .cm-btn.cm-btn-close{background-color:#c8c8c8;background-color:var(--light2,#c8c8c8)}.klaro .context-notice .cm-btn.cm-btn-success,.klaro .cookie-modal .cm-btn.cm-btn-success,.klaro .cookie-notice .cm-btn.cm-btn-success{background-color:var(--corporative-color);background-color:var(--green1,var(--corporative-color));border:1px solid var(--green1,var(--corporative-color))}.klaro .context-notice .cm-btn.cm-btn-success-var,.klaro .cookie-modal .cm-btn.cm-btn-success-var,.klaro .cookie-notice .cm-btn.cm-btn-success-var{background-color:var(--corporative-color);background-color:var(--green2,var(--corporative-color))}.klaro .cn-decline[type=button],.klaro .context-notice .cm-btn.cm-btn-info,.klaro .cookie-modal .cm-btn.cm-btn-info,.klaro .cookie-notice .cm-btn.cm-btn-info{background-color:transparent;color:var(--corporative-color);border:none;text-decoration:underline}.klaro .context-notice{border-radius:4px;border-radius:var(--border-radius,4px);border-style:var(--border-style,solid);border-width:var(--border-width,1px);border:1px solid #c8c8c8;border-color:var(--light2,#c8c8c8);background-color:#fafafa;background-color:var(--light1,#fafafa);display:flex;flex-direction:column;flex-wrap:wrap;align-items:center;justify-content:center;padding:12px;height:100%}.klaro .context-notice.cm-dark{background-color:#333;background-color:var(--dark1,#333);border-color:#5c5c5c;border-color:var(--dark2,#5c5c5c)}.klaro .cookie-notice h1{margin-top:0;margin-bottom:22px}.klaro .context-notice.cm-dark p a{color:#459cdc;color:var(--blue2,#459cdc)}.klaro .context-notice p{color:#333;color:var(--dark1,#333);flex-grow:0;text-align:center;padding-top:0;margin-top:0}.klaro .context-notice p a{color:var(--corporative-color);color:var(--green2,var(--corporative-color))}.klaro .context-notice p.cm-buttons{margin-top:12px}.klaro .cookie-modal{width:100%;height:100%;position:fixed;overflow:hidden;left:0;top:0;z-index:99999}.klaro .cookie-modal .cm-modal.cm-klaro,.klaro .cookie-modal-notice{color:#fafafa;z-index:1001;max-height:98%;top:50%;overflow:auto}.klaro .cookie-modal.cm-embedded{position:relative;height:inherit;width:inherit;left:inherit;right:inherit;z-index:0}.klaro .cookie-modal.cm-embedded .cm-modal.cm-klaro{max-height:80vh;position:relative;-ms-transform:none;transform:none}.klaro .cookie-modal .cm-bg{background:rgba(0,0,0,.5);height:100%;width:100%;position:fixed;top:0;left:0}.klaro .cookie-modal .cm-modal.cm-klaro{background-color:#333;background-color:var(--dark1,#333);color:var(--light1,#fafafa);width:100%;-ms-transform:translateY(-50%);transform:translateY(-50%);position:fixed}@media (min-width:660px){.klaro .cookie-modal .cm-modal.cm-klaro{border-radius:4px;border-radius:var(--border-radius,4px);position:relative;margin:0 auto;max-width:640px;height:auto;width:auto}}.klaro .cookie-modal .cm-modal .hide{border-style:none;background:0 0;cursor:pointer;position:absolute;top:20px;right:20px;z-index:1}.klaro .cookie-modal .cm-modal .hide svg{stroke:#fafafa;stroke:var(--light1,#fafafa)}.klaro .cookie-modal .cm-modal .cm-footer{border-top-color:var(--dark2,#5c5c5c);border-top-width:var(--border-width,1px);border-top:1px solid #5c5c5c;border-top-style:var(--border-style,solid);padding:1em}.klaro .cookie-modal .cm-modal .cm-footer-buttons{display:flex;flex-flow:row-reverse;justify-content:space-between}.klaro .cookie-modal .cm-modal .cm-footer .cm-powered-by{font-size:.8em;padding-top:4px;text-align:right;padding-right:8px}.klaro .cookie-modal .cm-modal .cm-footer .cm-powered-by a{color:#5c5c5c;color:var(--dark2,#5c5c5c)}.klaro .cookie-modal .cm-modal .cm-header{border-bottom-width:var(--border-width,1px);border-bottom-style:var(--border-style,solid);border-bottom:1px solid #5c5c5c;border-bottom-color:var(--dark2,#5c5c5c);padding:24px}.klaro .cookie-modal .cm-modal .cm-header h1{margin:0;font-size:2em;display:block}.klaro .cookie-modal .cm-modal .cm-header h1.title{padding-right:20px}.klaro .cookie-modal .cm-modal .cm-body{max-height:200px;margin:2px;overflow:auto;padding:1em}.klaro .cookie-modal .cm-modal .cm-body ul{display:block}.klaro .cookie-modal .cm-modal .cm-body span{display:inline-block;width:auto}.klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes,.klaro .cookie-modal .cm-modal .cm-body ul.cm-services{padding:0;margin:0}.klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-purpose .cm-services .cm-caret,.klaro .cookie-modal .cm-modal .cm-body ul.cm-services li.cm-purpose .cm-services .cm-caret{color:#a0a0a0;color:var(--light3,#a0a0a0)}.klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-purpose .cm-services .cm-content,.klaro .cookie-modal .cm-modal .cm-body ul.cm-services li.cm-purpose .cm-services .cm-content{margin-left:-40px;display:none}.klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-purpose .cm-services .cm-content.expanded,.klaro .cookie-modal .cm-modal .cm-body ul.cm-services li.cm-purpose .cm-services .cm-content.expanded{margin-top:10px;display:block}.klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-purpose,.klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-service,.klaro .cookie-modal .cm-modal .cm-body ul.cm-services li.cm-purpose,.klaro .cookie-modal .cm-modal .cm-body ul.cm-services li.cm-service{position:relative;line-height:20px;vertical-align:middle;padding-left:60px;min-height:40px}.klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-purpose p.purposes,.klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-service p.purposes,.klaro .cookie-modal .cm-modal .cm-body ul.cm-services li.cm-purpose p.purposes,.klaro .cookie-modal .cm-modal .cm-body ul.cm-services li.cm-service p.purposes{color:#a0a0a0;color:var(--light3,#a0a0a0);font-size:.8em}.klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-purpose.cm-toggle-all,.klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-service.cm-toggle-all,.klaro .cookie-modal .cm-modal .cm-body ul.cm-services li.cm-purpose.cm-toggle-all,.klaro .cookie-modal .cm-modal .cm-body ul.cm-services li.cm-service.cm-toggle-all{border-top-width:var(--border-width,1px);border-top-style:var(--border-style,solid);border-top:1px solid #5c5c5c;border-top-color:var(--dark2,#5c5c5c);padding-top:1em}.klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-purpose span.cm-list-title,.klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-service span.cm-list-title,.klaro .cookie-modal .cm-modal .cm-body ul.cm-services li.cm-purpose span.cm-list-title,.klaro .cookie-modal .cm-modal .cm-body ul.cm-services li.cm-service span.cm-list-title{font-weight:600}.klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-purpose span.cm-opt-out,.klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-purpose span.cm-required,.klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-service span.cm-opt-out,.klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-service span.cm-required,.klaro .cookie-modal .cm-modal .cm-body ul.cm-services li.cm-purpose span.cm-opt-out,.klaro .cookie-modal .cm-modal .cm-body ul.cm-services li.cm-purpose span.cm-required,.klaro .cookie-modal .cm-modal .cm-body ul.cm-services li.cm-service span.cm-opt-out,.klaro .cookie-modal .cm-modal .cm-body ul.cm-services li.cm-service span.cm-required{color:#5c5c5c;color:var(--dark2,#5c5c5c);padding-left:.2em;font-size:.8em}.klaro .cm-service .slider.round,.klaro .cookie-notice-hidden{display:none}.klaro .cookie-notice:not(.cookie-modal-notice){background-color:#333;background-color:var(--dark1,#333);z-index:999;position:fixed;width:100%;bottom:0;right:0}@media (min-width:1024px){.klaro .cookie-notice:not(.cookie-modal-notice){border-radius:4px;border-radius:var(--border-radius,4px);position:fixed;position:var(--notice-position,fixed);right:20px;right:var(--notice-right,20px);left:auto;left:var(--notice-left,auto);bottom:20px;bottom:var(--notice-bottom,20px);top:auto;top:var(--notice-top,auto);max-width:400px;max-width:var(--notice-max-width,400px);box-shadow:0 4px 6px 0 rgba(0,0,0,.2),5px 5px 10px 0 rgba(0,0,0,.19)}}@media (max-width:1023px){.klaro .cookie-notice:not(.cookie-modal-notice){border-style:none;border-radius:0}}.klaro .cookie-notice:not(.cookie-modal-notice).cn-embedded{position:relative;height:inherit;width:inherit;left:inherit;right:inherit;bottom:inherit;z-index:0}.klaro .cookie-notice:not(.cookie-modal-notice).cn-embedded .cn-body{padding-top:.5em}.klaro .cookie-notice:not(.cookie-modal-notice) .cn-body{margin-bottom:0;margin-right:0;bottom:0;padding:0 1em 1em}.klaro .cookie-notice:not(.cookie-modal-notice) .cn-body p{margin-bottom:.5em}.klaro .cookie-notice:not(.cookie-modal-notice) .cn-body p.cn-changes{text-decoration:underline}.klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-learn-more{display:inline-block;flex-grow:1}.klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-buttons{display:inline-block;margin-top:-.5em}.klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-buttons button.cm-btn,.klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-ok a,.klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-ok div{margin-top:.5em}@media (max-width:414px){.klaro .cookie-notice h1{margin-bottom:10px}.klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-buttons{width:100%}.klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-buttons button.cm-btn{width:calc(50% - .5em)}.klaro .cookie-modal .cm-modal .cm-footer-buttons,.klaro .cookie-modal-notice div.cn-ok{flex-direction:column-reverse}.klaro .cookie-modal-notice .cn-buttons{display:flex;flex-direction:column-reverse;width:100%}.klaro .cookie-notice h1{font-size:25px;position:sticky;top:0;background-color:#fafafa}.klaro .cookie-modal .cookie-notice.cookie-modal-notice p{overflow-y:scroll;height:200px;padding-right:8px}div.klaro div.cookie-modal div.cookie-notice.cookie-modal-notice{transform:translateY(0);bottom:0;top:auto;position:fixed;max-width:100%;padding:10px}div.klaro .cookie-modal .cm-modal.cm-klaro{transform:translateY(0);bottom:0;top:auto;position:fixed;max-width:100%}}.klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-ok{margin-top:-.5em;display:flex;flex-flow:row;flex-wrap:wrap;justify-content:right;align-items:baseline}.klaro .cookie-modal-notice{background-color:#333;background-color:var(--dark1,#333);color:var(--light1,#fafafa);width:auto;-ms-transform:translateY(-50%);transform:translateY(-50%);position:fixed;padding:20px}@media (min-width:400px){.klaro .cookie-modal-notice{border-radius:4px;border-radius:var(--border-radius,4px);position:relative;margin:0 auto;max-width:700px;height:auto;width:auto}}.klaro .cookie-modal-notice .cn-ok{display:flex;flex-flow:row;justify-content:space-between;align-items:center;margin-top:1em}.klaro .cookie-modal .cm-modal .cm-body ul.cm-services li.cm-service span.cm-required{color:#000}.klaro .cookie-modal a{text-decoration:underline}\n', ""]), e.exports = t
+        (t = n(188)(!1)).push([e.i, klaroConfig.cssColor + '.klaro .context-notice .slider,.klaro .cookie-modal .cm-modal.cm-klaro,.klaro .cookie-modal .slider,.klaro .cookie-modal-notice,.klaro .cookie-notice .slider{box-shadow:0 4px 6px 0 rgba(0,0,0,.2),5px 5px 10px 0 rgba(0,0,0,.19)}.klaro,.klaro button{font-family:inherit;font-family:var(--font-family,inherit);font-size:14px;font-size:var(--font-size,14px)}.klaro ::-webkit-scrollbar{width:4px;height:10px}.klaro ::-webkit-scrollbar-thumb:hover{background:var(--corporative-color)}.klaro ::-webkit-scrollbar-thumb{transition:2s;border-radius:10px}.klaro.cm-as-context-notice{height:100%;padding-bottom:12px;padding-top:12px}.klaro .context-notice .cm-switch-container,.klaro .cookie-modal .cm-switch-container,.klaro .cookie-notice .cm-switch-container{border-bottom-style:var(--border-style,solid);border-bottom-width:var(--border-width,1px);border-bottom:1px solid #c8c8c8;border-bottom-color:var(--light2,#c8c8c8);display:block;position:relative;padding:10px 10px 10px 66px;line-height:20px;vertical-align:middle;min-height:40px}.klaro .context-notice .cm-switch-container:last-child,.klaro .cookie-modal .cm-switch-container:last-child,.klaro .cookie-notice .cm-switch-container:last-child{border-bottom:0}.klaro .context-notice .cm-switch-container p,.klaro .context-notice .cm-switch-container:first-child,.klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-purpose p,.klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-purpose:first-child,.klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-service p,.klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-service:first-child,.klaro .cookie-modal .cm-modal .cm-body ul.cm-services li.cm-purpose p,.klaro .cookie-modal .cm-modal .cm-body ul.cm-services li.cm-purpose:first-child,.klaro .cookie-modal .cm-modal .cm-body ul.cm-services li.cm-service p,.klaro .cookie-modal .cm-modal .cm-body ul.cm-services li.cm-service:first-child,.klaro .cookie-modal .cm-switch-container p,.klaro .cookie-modal .cm-switch-container:first-child,.klaro .cookie-notice .cm-switch-container p,.klaro .cookie-notice .cm-switch-container:first-child{margin-top:0}.klaro .context-notice .cm-switch,.klaro .cookie-modal .cm-switch,.klaro .cookie-notice .cm-switch{position:relative;display:inline-block;width:50px;height:30px}.klaro .context-notice .cm-list-input:checked+.cm-list-label .slider,.klaro .cookie-modal .cm-list-input:checked+.cm-list-label .slider,.klaro .cookie-notice .cm-list-input:checked+.cm-list-label .slider{background-color:var(--corporative-color);background-color:var(--green1,var(--corporative-color))}.klaro .context-notice .cm-list-input.half-checked:checked+.cm-list-label .slider,.klaro .cookie-modal .cm-list-input.half-checked:checked+.cm-list-label .slider,.klaro .cookie-notice .cm-list-input.half-checked:checked+.cm-list-label .slider{background-color:var(--corporative-color);background-color:var(--green1,var(--corporative-color));opacity:.6}.klaro .context-notice .cm-list-input.half-checked:checked+.cm-list-label .slider::before,.klaro .context-notice .cm-list-input.only-required+.cm-list-label .slider::before,.klaro .cookie-modal .cm-list-input.half-checked:checked+.cm-list-label .slider::before,.klaro .cookie-modal .cm-list-input.only-required+.cm-list-label .slider::before,.klaro .cookie-notice .cm-list-input.half-checked:checked+.cm-list-label .slider::before,.klaro .cookie-notice .cm-list-input.only-required+.cm-list-label .slider::before{-ms-transform:translateX(10px);transform:translateX(10px)}.klaro .context-notice .cm-list-input.only-required+.cm-list-label .slider,.klaro .cookie-modal .cm-list-input.only-required+.cm-list-label .slider,.klaro .cookie-notice .cm-list-input.only-required+.cm-list-label .slider{background-color:var(--corporative-color);background-color:var(--green2,var(--corporative-color));opacity:.8}.klaro .context-notice .cm-list-input.required:checked+.cm-list-label .slider,.klaro .cookie-modal .cm-list-input.required:checked+.cm-list-label .slider,.klaro .cookie-notice .cm-list-input.required:checked+.cm-list-label .slider{background-color:var(--corporative-color);background-color:var(--green2,var(--corporative-color));opacity:.8;cursor:not-allowed}.klaro .context-notice .cm-list-input,.klaro .cookie-modal .cm-list-input,.klaro .cookie-notice .cm-list-input{position:absolute;top:0;left:0;opacity:0;width:50px;height:30px}.klaro .context-notice .cm-list-title,.klaro .cookie-modal .cm-list-title,.klaro .cookie-notice .cm-list-title{font-size:.9em;font-weight:600}.klaro .context-notice .cm-list-description,.klaro .cookie-modal .cm-list-description,.klaro .cookie-notice .cm-list-description{color:#7c7c7c;color:var(--dark3,#7c7c7c);font-size:.9em;padding-top:4px}.klaro .context-notice .cm-list-label .cm-switch,.klaro .cookie-modal .cm-list-label .cm-switch,.klaro .cookie-notice .cm-list-label .cm-switch{position:absolute;left:0}.klaro .context-notice .cm-list-label .slider,.klaro .cookie-modal .cm-list-label .slider,.klaro .cookie-notice .cm-list-label .slider{background-color:#f2f2f2;background-color:var(--white2,#f2f2f2);position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;transition:.4s;width:50px;display:inline-block}.klaro .context-notice .cm-list-label .slider::before,.klaro .cookie-modal .cm-list-label .slider::before,.klaro .cookie-notice .cm-list-label .slider::before{background-color:#e6e6e6;background-color:var(--white3,#e6e6e6);position:absolute;content:"";height:20px;width:20px;left:5px;bottom:5px;transition:.4s}.klaro .context-notice .cm-list-label .slider.round,.klaro .cookie-modal .cm-list-label .slider.round,.klaro .cookie-notice .cm-list-label .slider.round{border-radius:30px}.klaro .context-notice .cm-list-label .slider.round::before,.klaro .cookie-modal .cm-list-label .slider.round::before,.klaro .cookie-notice .cm-list-label .slider.round::before{border-radius:50%}.klaro .context-notice .cm-list-label input:focus+.slider,.klaro .cookie-modal .cm-list-label input:focus+.slider,.klaro .cookie-notice .cm-list-label input:focus+.slider{box-shadow-color:#48dfb2;box-shadow-color:var(--green3,#48dfb2);box-shadow:0 0 1px var(color,green3)}.klaro .context-notice .cm-list-input:checked+.cm-list-label .slider::before,.klaro .context-notice .cm-list-label input:checked+.slider::before,.klaro .cookie-modal .cm-list-input:checked+.cm-list-label .slider::before,.klaro .cookie-modal .cm-list-label input:checked+.slider::before,.klaro .cookie-notice .cm-list-input:checked+.cm-list-label .slider::before,.klaro .cookie-notice .cm-list-label input:checked+.slider::before{-ms-transform:translateX(20px);transform:translateX(20px)}.klaro .context-notice .cm-list-input:focus+.cm-list-label .slider,.klaro .cookie-modal .cm-list-input:focus+.cm-list-label .slider,.klaro .cookie-notice .cm-list-input:focus+.cm-list-label .slider{box-shadow:0 4px 6px 0 rgba(125,125,125,.2),5px 5px 10px 0 rgba(125,125,125,.19)}.klaro .context-notice a,.klaro .cookie-modal a,.klaro .cookie-notice a{color:var(--corporative-color);color:var(--green1,var(--corporative-color));text-decoration:none}.klaro .cookie-notice a{text-decoration:underline}.klaro .context-notice h1,.klaro .context-notice h2,.klaro .context-notice li,.klaro .context-notice p,.klaro .context-notice strong,.klaro .context-notice ul,.klaro .context-notice.cm-dark p,.klaro .cookie-modal h1,.klaro .cookie-modal h2,.klaro .cookie-modal li,.klaro .cookie-modal p,.klaro .cookie-modal strong,.klaro .cookie-modal ul,.klaro .cookie-notice h1,.klaro .cookie-notice h2,.klaro .cookie-notice li,.klaro .cookie-notice p,.klaro .cookie-notice strong,.klaro .cookie-notice ul{color:#fafafa;color:var(--light1,#fafafa)}.klaro .context-notice h1,.klaro .context-notice h2,.klaro .context-notice li,.klaro .context-notice p,.klaro .context-notice ul,.klaro .cookie-modal h1,.klaro .cookie-modal h2,.klaro .cookie-modal li,.klaro .cookie-modal p,.klaro .cookie-modal ul,.klaro .cookie-notice h1,.klaro .cookie-notice h2,.klaro .cookie-notice li,.klaro .cookie-notice p,.klaro .cookie-notice ul{display:block;text-align:left;margin:.7em 0 0;padding:0}.klaro .context-notice h1,.klaro .context-notice h2,.klaro .context-notice h3,.klaro .context-notice h4,.klaro .context-notice h5,.klaro .context-notice h6,.klaro .cookie-modal h1,.klaro .cookie-modal h2,.klaro .cookie-modal h3,.klaro .cookie-modal h4,.klaro .cookie-modal h5,.klaro .cookie-modal h6,.klaro .cookie-notice h1,.klaro .cookie-notice h2,.klaro .cookie-notice h3,.klaro .cookie-notice h4,.klaro .cookie-notice h5,.klaro .cookie-notice h6{font-family:inherit;font-family:var(--title-font-family,inherit)}.klaro .context-notice .cm-link,.klaro .cookie-modal .cm-link,.klaro .cookie-notice .cm-link{margin-right:.5em;vertical-align:middle}.klaro .context-notice .cm-btn,.klaro .cookie-modal .cm-btn,.klaro .cookie-notice .cm-btn{color:#fff;color:var(--button-text-color,#fff);background-color:#5c5c5c;background-color:var(--dark2,#5c5c5c);border-radius:4px;border-radius:var(--border-radius,4px);padding:12px;margin-right:.5em;border-style:none;font-size:1em;cursor:pointer}.klaro .context-notice .cm-btn:disabled,.klaro .cookie-modal .cm-btn:disabled,.klaro .cookie-notice .cm-btn:disabled{opacity:.5}.klaro .context-notice .cm-btn.cm-btn-close,.klaro .cookie-modal .cm-btn.cm-btn-close,.klaro .cookie-notice .cm-btn.cm-btn-close{background-color:#c8c8c8;background-color:var(--light2,#c8c8c8)}.klaro .context-notice .cm-btn.cm-btn-success,.klaro .cookie-modal .cm-btn.cm-btn-success,.klaro .cookie-notice .cm-btn.cm-btn-success{background-color:var(--corporative-color);background-color:var(--green1,var(--corporative-color));border:1px solid var(--green1,var(--corporative-color))}.klaro .context-notice .cm-btn.cm-btn-success-var,.klaro .cookie-modal .cm-btn.cm-btn-success-var,.klaro .cookie-notice .cm-btn.cm-btn-success-var{background-color:var(--corporative-color);background-color:var(--green2,var(--corporative-color))}.klaro .cn-decline[type=button],.klaro .context-notice .cm-btn.cm-btn-info,.klaro .cookie-modal .cm-btn.cm-btn-info,.klaro .cookie-notice .cm-btn.cm-btn-info{background-color:transparent;color:var(--corporative-color);border:none;text-decoration:underline}.klaro .context-notice{border-radius:4px;border-radius:var(--border-radius,4px);border-style:var(--border-style,solid);border-width:var(--border-width,1px);border:1px solid #c8c8c8;border-color:var(--light2,#c8c8c8);background-color:#fafafa;background-color:var(--light1,#fafafa);display:flex;flex-direction:column;flex-wrap:wrap;align-items:center;justify-content:center;padding:12px;height:100%}.klaro .context-notice.cm-dark{background-color:#333;background-color:var(--dark1,#333);border-color:#5c5c5c;border-color:var(--dark2,#5c5c5c)}.klaro .cookie-notice h1{margin-top:0;margin-bottom:22px}.klaro .context-notice.cm-dark p a{color:#459cdc;color:var(--blue2,#459cdc)}.klaro .context-notice p{color:#333;color:var(--dark1,#333);flex-grow:0;text-align:center;padding-top:0;margin-top:0}.klaro .context-notice p a{color:var(--corporative-color);color:var(--green2,var(--corporative-color))}.klaro .context-notice p.cm-buttons{margin-top:12px}.klaro .cookie-modal{width:100%;height:100%;position:fixed;overflow:hidden;left:0;top:0;z-index:99999}.klaro .cookie-modal .cm-modal.cm-klaro,.klaro .cookie-modal-notice{color:#fafafa;z-index:1001;max-height:98%;top:50%;overflow:auto}.klaro .cookie-modal.cm-embedded{position:relative;height:inherit;width:inherit;left:inherit;right:inherit;z-index:0}.klaro .cookie-modal.cm-embedded .cm-modal.cm-klaro{max-height:80vh;position:relative;-ms-transform:none;transform:none}.klaro .cookie-modal .cm-bg{background:rgba(0,0,0,.5);height:100%;width:100%;position:fixed;top:0;left:0}.klaro .cookie-modal .cm-modal.cm-klaro{background-color:#333;background-color:var(--dark1,#333);color:var(--light1,#fafafa);width:100%;-ms-transform:translateY(-50%);transform:translateY(-50%);position:fixed}@media (min-width:660px){.klaro .cookie-modal .cm-modal.cm-klaro{border-radius:4px;border-radius:var(--border-radius,4px);position:relative;margin:0 auto;max-width:640px;height:auto;width:auto}}.klaro .cookie-modal .cm-modal .hide{border-style:none;background:0 0;cursor:pointer;position:absolute;top:20px;right:20px;z-index:1}.klaro .cookie-modal .cm-modal .hide svg{stroke:#fafafa;stroke:var(--light1,#fafafa)}.klaro .cookie-modal .cm-modal .cm-footer{border-top-color:var(--dark2,#5c5c5c);border-top-width:var(--border-width,1px);border-top:1px solid #5c5c5c;border-top-style:var(--border-style,solid);padding:1em}.klaro .cookie-modal .cm-modal .cm-footer-buttons{display:flex;flex-flow:row-reverse;justify-content:space-between}.klaro .cookie-modal .cm-modal .cm-footer .cm-powered-by{font-size:.8em;padding-top:4px;text-align:right;padding-right:8px}.klaro .cookie-modal .cm-modal .cm-footer .cm-powered-by a{color:#5c5c5c;color:var(--dark2,#5c5c5c)}.klaro .cookie-modal .cm-modal .cm-header{border-bottom-width:var(--border-width,1px);border-bottom-style:var(--border-style,solid);border-bottom:1px solid #5c5c5c;border-bottom-color:var(--dark2,#5c5c5c);padding:24px}.klaro .cookie-modal .cm-modal .cm-header h1{margin:0;font-size:2em;display:block}.klaro .cookie-modal .cm-modal .cm-header h1.title{padding-right:20px}.klaro .cookie-modal .cm-modal .cm-body{max-height:200px;margin:2px;overflow:auto;padding:1em}.klaro .cookie-modal .cm-modal .cm-body ul{display:block}.klaro .cookie-modal .cm-modal .cm-body span{display:inline-block;width:auto}.klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes,.klaro .cookie-modal .cm-modal .cm-body ul.cm-services{padding:0;margin:0}.klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-purpose .cm-services .cm-caret,.klaro .cookie-modal .cm-modal .cm-body ul.cm-services li.cm-purpose .cm-services .cm-caret{color:#a0a0a0;color:var(--light3,#a0a0a0)}.klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-purpose .cm-services .cm-content,.klaro .cookie-modal .cm-modal .cm-body ul.cm-services li.cm-purpose .cm-services .cm-content{margin-left:-40px;display:none}.klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-purpose .cm-services .cm-content.expanded,.klaro .cookie-modal .cm-modal .cm-body ul.cm-services li.cm-purpose .cm-services .cm-content.expanded{margin-top:10px;display:block}.klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-purpose,.klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-service,.klaro .cookie-modal .cm-modal .cm-body ul.cm-services li.cm-purpose,.klaro .cookie-modal .cm-modal .cm-body ul.cm-services li.cm-service{position:relative;line-height:20px;vertical-align:middle;padding-left:60px;min-height:40px}.klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-purpose p.purposes,.klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-service p.purposes,.klaro .cookie-modal .cm-modal .cm-body ul.cm-services li.cm-purpose p.purposes,.klaro .cookie-modal .cm-modal .cm-body ul.cm-services li.cm-service p.purposes{color:#a0a0a0;color:var(--light3,#a0a0a0);font-size:.8em}.klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-purpose.cm-toggle-all,.klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-service.cm-toggle-all,.klaro .cookie-modal .cm-modal .cm-body ul.cm-services li.cm-purpose.cm-toggle-all,.klaro .cookie-modal .cm-modal .cm-body ul.cm-services li.cm-service.cm-toggle-all{border-top-width:var(--border-width,1px);border-top-style:var(--border-style,solid);border-top:1px solid #5c5c5c;border-top-color:var(--dark2,#5c5c5c);padding-top:1em}.klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-purpose span.cm-list-title,.klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-service span.cm-list-title,.klaro .cookie-modal .cm-modal .cm-body ul.cm-services li.cm-purpose span.cm-list-title,.klaro .cookie-modal .cm-modal .cm-body ul.cm-services li.cm-service span.cm-list-title{font-weight:600}.klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-purpose span.cm-opt-out,.klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-purpose span.cm-required,.klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-service span.cm-opt-out,.klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-service span.cm-required,.klaro .cookie-modal .cm-modal .cm-body ul.cm-services li.cm-purpose span.cm-opt-out,.klaro .cookie-modal .cm-modal .cm-body ul.cm-services li.cm-purpose span.cm-required,.klaro .cookie-modal .cm-modal .cm-body ul.cm-services li.cm-service span.cm-opt-out,.klaro .cookie-modal .cm-modal .cm-body ul.cm-services li.cm-service span.cm-required{color:#5c5c5c;color:var(--dark2,#5c5c5c);padding-left:.2em;font-size:.8em}.klaro .cm-service .slider.round,.klaro .cookie-notice-hidden{display:none}.klaro .cookie-notice:not(.cookie-modal-notice){background-color:#333;background-color:var(--dark1,#333);z-index:999;position:fixed;width:100%;bottom:0;right:0}@media (min-width:1024px){.klaro .cookie-notice:not(.cookie-modal-notice){border-radius:4px;border-radius:var(--border-radius,4px);position:fixed;position:var(--notice-position,fixed);right:20px;right:var(--notice-right,20px);left:auto;left:var(--notice-left,auto);bottom:20px;bottom:var(--notice-bottom,20px);top:auto;top:var(--notice-top,auto);max-width:400px;max-width:var(--notice-max-width,400px);box-shadow:0 4px 6px 0 rgba(0,0,0,.2),5px 5px 10px 0 rgba(0,0,0,.19)}}@media (max-width:1023px){.klaro .cookie-notice:not(.cookie-modal-notice){border-style:none;border-radius:0}}.klaro .cookie-notice:not(.cookie-modal-notice).cn-embedded{position:relative;height:inherit;width:inherit;left:inherit;right:inherit;bottom:inherit;z-index:0}.klaro .cookie-notice:not(.cookie-modal-notice).cn-embedded .cn-body{padding-top:.5em}.klaro .cookie-notice:not(.cookie-modal-notice) .cn-body{margin-bottom:0;margin-right:0;bottom:0;padding:0 1em 1em}.klaro .cookie-notice:not(.cookie-modal-notice) .cn-body p{margin-bottom:.5em}.klaro .cookie-notice:not(.cookie-modal-notice) .cn-body p.cn-changes{text-decoration:underline}.klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-learn-more{display:inline-block;flex-grow:1}.klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-buttons{display:inline-block;margin-top:-.5em}.klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-buttons button.cm-btn,.klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-ok a,.klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-ok div{margin-top:.5em}@media (max-width:414px){.klaro .cookie-notice h1{margin-bottom:10px}.klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-buttons{width:100%}.klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-buttons button.cm-btn{width:calc(50% - .5em)}.klaro .cookie-modal .cm-modal .cm-footer-buttons,.klaro .cookie-modal-notice div.cn-ok{flex-direction:column-reverse}.klaro .cookie-modal-notice .cn-buttons{display:flex;flex-direction:column-reverse;width:100%}.klaro .cookie-notice h1{font-size:25px;position:sticky;top:0;background-color:#fafafa}.klaro .cookie-modal .cookie-notice.cookie-modal-notice p{overflow-y:scroll;height:200px;padding-right:8px}div.klaro div.cookie-modal div.cookie-notice.cookie-modal-notice{transform:translateY(0);bottom:0;top:auto;position:fixed;max-width:100%;padding:10px}div.klaro .cookie-modal .cm-modal.cm-klaro{transform:translateY(0);bottom:0;top:auto;position:fixed;max-width:100%}}.klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-ok{margin-top:-.5em;display:flex;flex-flow:row;flex-wrap:wrap;justify-content:right;align-items:baseline}.klaro .cookie-modal-notice{background-color:#333;background-color:var(--dark1,#333);color:var(--light1,#fafafa);width:auto;-ms-transform:translateY(-50%);transform:translateY(-50%);position:fixed;padding:20px}@media (min-width:400px){.klaro .cookie-modal-notice{border-radius:4px;border-radius:var(--border-radius,4px);position:relative;margin:0 auto;max-width:700px;height:auto;width:auto}}.klaro .cookie-modal-notice .cn-ok{display:flex;flex-flow:row;justify-content:space-between;align-items:center;margin-top:1em}.klaro .cookie-modal .cm-modal .cm-body ul.cm-services li.cm-service span.cm-required{color:#000}.klaro .cookie-modal a{text-decoration:underline}', ""]), e.exports = t
       }, function (e, t, n) {
         "use strict";
         e.exports = function (e) {
@@ -6492,7 +6524,11 @@ function checkBodyAndInsertElement() {
                 className: "cm-powered-by"
               }, es("a", {
                 target: "_blank",
-                href: l.poweredBy || "https://niveldecalidad.com",
+                href: l.implementedBy || "https://niveldecalidad.com",
+                rel: "noopener"
+              }, d(["implementedBy"])), es("a", {
+                target: "_blank",
+                href: l.poweredBy || "https://klaro.org/",
                 rel: "noopener"
               }, d(["poweredBy"])))));
               return f ? es("div", {
@@ -7618,7 +7654,7 @@ function checkBodyAndInsertElement() {
                     r instanceof RegExp || (r = r.startsWith("^") ? RegExp(r) : RegExp("^" + r.replace(/[-[\]/{}()*+?.\\^$|]/g, "\\$&") + "$"));
                     for (var l = 0; l < n.length; l++) {
                       var u = n[l];
-                      null !== r.exec(u.name) && (console.debug("Deleting cookie:", u.name, "Matched pattern:", r, "Path:", i, "Domain:", a), tl(u.name, i, a), void 0 === a && tl(u.name, i, "." + window.location.hostname))
+                      null !== r.exec(u.name) && (console.debug("Deleting cookie:", u.name, "Matched pattern:", r, "Path:", i, "Domain:", a), tl(u.name, i, a), void 0 === a && tl(u.name, i, "." + klaroConfig.dominio))
                     }
                   }
                 }
