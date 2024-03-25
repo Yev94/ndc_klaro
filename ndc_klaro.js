@@ -16,7 +16,7 @@ var klaroConfig = {
   },
   corp_color: "#000000",
   cssColor: "",
-  underlineLinks: 'underline',
+  underlineLinks: 'none',
   cssUnderline: "",
   version: 1,
   elementID: 'ndc_klaro',
