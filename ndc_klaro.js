@@ -2,21 +2,22 @@ var klaroConfig = {
   dominio: window.location.hostname, 
   urlPoliticas: {
     cookies: {
-      es: '/preguntas-frecuentes?#textos-legales',
-      en: '/preguntas-frecuentes?#textos-legales',
-      pt: '/preguntas-frecuentes?#textos-legales',
-      it: '/preguntas-frecuentes?#textos-legales',
+      es: '/faqs/bases-legales/politica-de-privacidad.html',
+      en: '/faqs/bases-legales/politica-de-privacidad.html',
+      pt: '/faqs/bases-legales/politica-de-privacidad.html',
+      it: '/faqs/bases-legales/politica-de-privacidad.html',
     },
     privacidad: {
-      es: '/preguntas-frecuentes?#textos-legales',
-      en: '/preguntas-frecuentes?#textos-legales',
-      pt: '/preguntas-frecuentes?#textos-legales',
-      it: '/preguntas-frecuentes?#textos-legales',
+      es: '/faqs/bases-legales/politica-de-privacidad.html',
+      en: '/faqs/bases-legales/politica-de-privacidad.html',
+      pt: '/faqs/bases-legales/politica-de-privacidad.html',
+      it: '/faqs/bases-legales/politica-de-privacidad.html',
     }
   },
   corp_color: "#000000",
-  cssColor: "",
   underlineLinks: 'underline',
+  disablePoweredBy: true,
+  cssColor: "",
   cssUnderline: "",
   version: 1,
   elementID: 'ndc_klaro',
@@ -36,7 +37,6 @@ var klaroConfig = {
   hideDeclineAll: false,
   hideLearnMore: false,
   noticeAsModal: true,
-  disablePoweredBy: false,
   translations: {},
   services: [
     {
